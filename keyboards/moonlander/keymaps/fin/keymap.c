@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [NAV] = LAYOUT_moonlander(
         KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                                        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_NO,
-        KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,                                        KC_TRNS,        LCTL(KC_Y),     LCTL(KC_V),     LCTL(KC_C),     LCTL(KC_V),     LCTL(KC_Z),     KC_TRNS,
+        KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,                                        KC_TRNS,        LCTL(KC_Y),     LCTL(KC_V),     LCTL(KC_C),     LCTL(KC_X),     LCTL(KC_Z),     KC_TRNS,
         KC_TRNS,        KC_LGUI,        KC_LALT,        KC_LCTL,        KC_LSFT,        KC_NO,          KC_TRNS,                                        KC_TRNS,        CW_TOGG,        KC_PGUP,        KC_UP,          KC_PGDN,        KC_HOME,        KC_TRNS,
         KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          KC_INS,         KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_END,         KC_TRNS,
         KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_NO,                          KC_NO,                                          KC_NO,                          KC_DEL,         KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,
