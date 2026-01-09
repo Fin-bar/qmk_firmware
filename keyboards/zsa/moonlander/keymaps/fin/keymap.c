@@ -17,7 +17,8 @@ enum {
     MOUSE,
     MEDIA,
     GAME,
-    KEYBOARD
+    KEYBOARD,
+    QWERTY
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -64,16 +65,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MOUSE] = LAYOUT_moonlander(
         KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                                        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_NO,
         KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,                                        KC_TRNS,        KC_NO,          LSFT(KC_INS),   LCTL(KC_INS),   LSFT(KC_DEL),   KC_UNDO,        KC_TRNS,
-        KC_TRNS,        KC_LGUI,        KC_LALT,        KC_LCTL,        KC_LSFT,        KC_NO,          KC_TRNS,                                        KC_TRNS,        KC_NO,          KC_WH_L,        KC_MS_U,        KC_WH_R,        KC_WH_U,        KC_TRNS,
-        KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          KC_NO,          KC_MS_L,        KC_MS_D,        KC_MS_R,        KC_WH_D,        KC_TRNS,
-        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_NO,                          KC_NO,                                          KC_NO,                          KC_MS_BTN3,     KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,
-                                                                        KC_NO,          KC_TRNS,        KC_TRNS,                                        KC_TRNS,        KC_MS_BTN2,     KC_MS_BTN1
+        KC_TRNS,        KC_LGUI,        KC_LALT,        KC_LCTL,        KC_LSFT,        KC_NO,          KC_TRNS,                                        KC_TRNS,        KC_NO,          MS_WHLL,        MS_UP,          MS_WHLR,        MS_WHLU,        KC_TRNS,
+        KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          KC_NO,          MS_LEFT,        MS_DOWN,        MS_RGHT,        MS_WHLD,        KC_TRNS,
+        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_NO,                          KC_NO,                                          KC_NO,                          MS_BTN3,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,
+                                                                        KC_NO,          KC_TRNS,        KC_TRNS,                                        KC_TRNS,        MS_BTN2,        MS_BTN1
     ),
     [MEDIA] = LAYOUT_moonlander(
         KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                                        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_NO,
-        KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,                                        KC_TRNS,        RGB_MOD,        RGB_SPI,        RGB_HUI,        RGB_SAI,        RGB_VAI,        KC_TRNS,
+        KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,                                        KC_TRNS,        RM_NEXT,        RM_SPDU,        RM_HUEU,        RM_SATU,        RM_VALU,        KC_TRNS,
         KC_TRNS,        KC_LGUI,        KC_LALT,        KC_LCTL,        KC_LSFT,        KC_NO,          KC_TRNS,                                        KC_TRNS,        RGB_M_P,        KC_MPRV,        KC_VOLD,        KC_VOLU,        KC_MNXT,        KC_TRNS,
-        KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          RGB_TOG,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,
+        KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          RM_TOGG,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,
         KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                        KC_NO,                                          KC_NO,                          KC_MUTE,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,
                                                                         KC_NO,          KC_NO,          KC_TRNS,                                        KC_TRNS,        KC_MSTP,        KC_MPLY
     ),
@@ -81,17 +82,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,         KC_9,           KC_7,           KC_5,           KC_3,           KC_1,           KC_F11,                                         KC_F7,          KC_0,           KC_2,           KC_4,           KC_6,           KC_8,           KC_TRNS,
         KC_GRAVE,       KC_QUOTE,       KC_COMMA,       KC_DOT,         KC_P,           KC_Y,           KC_F1,                                          KC_F4,          KC_F,           KC_G,           KC_C,           KC_R,           KC_L,           KC_BSLS,
         KC_TAB,         KC_A,           KC_O,           KC_E,           KC_U,           KC_I,           KC_SCLN,                                        KC_MINS,        KC_D,           KC_H,           KC_T,           KC_N,           KC_S,           KC_EQL,
-        KC_LSFT,        KC_SLASH,       KC_Q,           KC_J,           KC_K,           KC_X,                                                           KC_B,           KC_M,           KC_W,           KC_V,           KC_Z,           KC_LSFT,
+        KC_LSFT,        KC_SLASH,       KC_Q,           KC_J,           KC_K,           KC_X,                                                                           KC_B,           KC_M,           KC_W,           KC_V,           KC_Z,           KC_LSFT,
         KC_MPLY,        KC_LBRC,        KC_RBRC,        KC_LALT,        KC_LCTL,                        KC_ENT,                                         KC_ENT,                         KC_LCTL,        KC_LALT,        KC_F3,          KC_F2,          KC_F1,
                                                                         KC_BSPC,        SH_MON,         KC_TRNS,                                        KC_TRNS,        KC_NO,          KC_SPC
     ),
     [KEYBOARD] = LAYOUT_moonlander(
-        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                                        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_NO,
+        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,                                        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        TG(QWERTY),
         KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,                                        KC_TRNS,        KC_NO,          DT_DOWN,        DT_PRNT,        DT_UP,          KC_NO,          KC_TRNS,
         KC_TRNS,        KC_NO,          KC_NO,          HOLD_BOOT,      KC_NO,          KC_NO,          KC_TRNS,                                        KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,
         KC_TRNS,        KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRNS,
         KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_NO,                          QK_RBT,                                         KC_TRNS,                        KC_NO,          KC_TRNS,        KC_TRNS,        KC_TRNS,        KC_TRNS,
                                                                         KC_NO,          KC_NO,          KC_TRNS,                                        KC_TRNS,        MU_TOGG,        MU_NEXT
+    ),
+    // For games that don't remap correctly; this is a qwerty layout with my normal space and backspace keys flipped and a standard number layout
+    [QWERTY] = LAYOUT_moonlander(
+    KC_ESC,         KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_F11,                                         KC_F7,          KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_TRNS,
+    KC_GRAVE,       KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_F1,                                          KC_F4,          KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_BSLS,
+    KC_TAB,         KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           KC_SCLN,                                        KC_MINS,        KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_EQL,
+    KC_LSFT,        KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                                                           KC_N,           KC_M,           KC_COMM,        KC_DOT,         KC_SLSH,        KC_LSFT,
+    KC_MPLY,        KC_LBRC,        KC_RBRC,        KC_LALT,        KC_LCTL,                        KC_ENT,                                         KC_ENT,                         KC_LCTL,        KC_LALT,        KC_F3,          KC_F2,          KC_F1,
+                                                                    KC_SPC,         SH_MON,         KC_TRNS,                                        KC_TRNS,        KC_NO,          KC_BSPC
     ),
 };
 
@@ -203,7 +213,10 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             ML_LED_5(on);
             ML_LED_6(on);
             break;
-            return state;
+        case 9:
+            ML_LED_1(on);
+            ML_LED_2(on);
+            ML_LED_3(on);
         default:
             break;
     };
